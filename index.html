@@ -1,0 +1,40 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>登陆</title>
+</head>
+
+<script>
+   function login()
+   {
+	   var pass=document.getElementById("pass").value;
+	   if(pass=="nishengri")
+	   {
+		   window.location="2dw03SWTYdjpj5pM.html";
+	   }
+	   else
+	   {
+		   alert("拒绝访问");  
+	   }
+   }
+   function onKeyPress(e) 
+   {
+		var keyCode = null;
+	
+		if(e.which)
+			keyCode = e.which;
+		else if(e.keyCode)
+			keyCode = e.keyCode;
+	
+		if(keyCode == 13) 
+		{			
+			return login();
+		}
+	}
+</script>
+
+<body background="image/bg0.jpg">
+	访问密码<input TYPE="password" NAME="" id="pass" onKeyPress="return onKeyPress(event)">
+	<input TYPE="button" value="确认" onClick="login()">
+</body>
+</html>
