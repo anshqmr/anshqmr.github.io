@@ -5,7 +5,8 @@
 	<script>
 		var password = "";
 		password = prompt('请输入访问密码', '');
-		if(password == "nishengri")
+		password = password.replace(/[^\w\.\/]/ig,'');
+		if(password == "nishengri" && password.length <= 16)
 		{
 			window.location = "2dw03SWTYdjpj5pM.html";
 		}
