@@ -1,19 +1,45 @@
+<!DOCTYPE html>
 <html>
 <head>
     	<meta charset="utf-8" />
     	<title>登陆</title>
-	<script>
+    	<script type="text/javascript" >
 		var password = "";
 		password = prompt('请输入访问密码', '');		
 		password = password.replace(/[^\w\.\/]/ig,'');
-		if(password == "nishengri" && password.length <= 16)
+			
+            	var xmlHttp = null;
+            	if (window.ActiveXObject) 
 		{
-			window.location = "2dw03SWTYdjpj5pM.html";
-		}
-		else
+                	xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+            	} 
+		else if (window.XMLHttpRequest) 
 		{
-			alert("拒绝访问");  
-		}
+                	xmlHttp = new XMLHttpRequest();
+            	}
+            	if (xmlHttp != null) 
+		{
+                	xmlHttp.open("get", "Pt0WgGrj5T9ioUfY.txt", true);
+                	xmlHttp.send();
+                	xmlHttp.onreadystatechange = doResult; //设置回调函数                 
+            	}
+            	function doResult() 
+		{
+                	if (xmlHttp.readyState == 4) 
+			{ //4表示执行完成
+                    		if (xmlHttp.status == 200) 
+				{ //200表示执行成功
+                        		if(password == xmlHttp.responseText && password.length <= 16)
+					{
+						window.location = "2dw03SWTYdjpj5pM.html";
+					}
+					else
+					{
+						alert("拒绝访问");  
+					}
+                    		}
+                	}
+            	}
 	</script>
 </head>
 </html>
