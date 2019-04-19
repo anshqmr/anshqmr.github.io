@@ -4,13 +4,7 @@
     	<title>登陆</title>
 	<script>
 		var password = "";
-		password = prompt('请输入访问密码', '');
-		if(password == null)
-		{
-			window.opener = null;
-			window.open('', '_self');
-			window.close();	
-		}		
+		password = prompt('请输入访问密码', '');		
 		password = password.replace(/[^\w\.\/]/ig,'');
 		if(password == "nishengri" && password.length <= 16)
 		{
@@ -19,9 +13,6 @@
 		else
 		{
 			alert("拒绝访问");  
-			window.opener = null;
-			window.open('', '_self');
-			window.close();	
 		}
 	</script>
 </head>
